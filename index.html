@@ -14,10 +14,12 @@
           --color_pageBackground: #090b1a;
           --color_cardBackground: #1c1a38;
           --color_textAccent: #aa5cdb;
+          --color_imageOverlay: #aa5cdb99;
           --color_textWhite: #ffffff;
           --color_textParagraph: #ffffffbf;
           --color_textHeading: #ffffff99;
           --fontsize_textBody: 15px;
+          --borderradius_card: 10px;
       }
 
       @font-face {
@@ -31,16 +33,15 @@
       }
 
       p.header, span.headerHighlight{
-          font-size:32px;
+          font-size:36px;
           color:var(--color_textWhite);
           font-family:Inter;
-          font-weight:400;
+          font-weight:700;
       }
 
       span.headerHighlight {
           color: var(--color_textAccent);
           font-family:Inter;
-          font-weight:700;
       }
 
       p.body{
@@ -48,10 +49,51 @@
           color:var(--color_textParagraph);
           font-family:LexendDeca;
           font-weight:400;
+          margin-top:-50px;
       }
 
-      p.statHeading{
-          color:var(--color_textHeading);
+      p.statHeading {
+          color: var(--color_textWhite);
+          font-family: Inter;
+          font-weight: 700;
+          font-size:32px;
+      }
+
+      div.main-grid-container {
+          display: grid;
+          width: 1080px;
+          height: 446px;
+          grid-template-columns: 540px 540px;
+          background-color: var(--color_cardBackground);
+          border-radius: var(--borderradius_card);
+      }
+
+      div.content-grid-container{
+          display: grid;
+          grid-template-areas:
+              'header header header'
+              'body body body'
+              'columnheader1 columnheader2 columnheader3'
+              'body1 body2 body3';
+          padding-top:20px;
+          padding-bottom:20px;
+          padding-right:60px;
+          padding-left:60px;
+      }
+
+      .gridHeader {grid-area:header;}
+      .gridBody {grid-area:body;}
+      .gridColumnHeader1 {grid-area:columnheader1;}
+      .gridColumnHeader2 {grid-area:columnheader2;}
+      .gridColumnHeader3 {grid-area:columnheader3;}
+      .gridBody1 {grid-area:body1;}
+      .gridBody2 {grid-area:body2;}
+      .gridBody3 {grid-area:body3;}
+
+      div.centering{
+          display:flex;
+          justify-content:center;
+          align-items:center;
       }
 
       .attribution { font-size: 11px; text-align: center; }
@@ -59,26 +101,32 @@
   </style>
 </head>
 <body style="background-color:var(--color_pageBackground)">
+    <div class="centering" style="height:95vh">
+        <div class="main-grid-container">
+            <div class="content-grid-container">
+                <p class="header gridHeader">Get <span class="headerHighlight">insights</span> that help your business grow.</p>
 
-    <p class="header">Get <span class="headerHighlight">insights</span> that help your business grow.</p>
+                <p class="body gridBody">
+                    Discover the benefits of data analytics and make better decisions regarding revenue, customer
+                    experience, and overall efficiency.
+                </p>
 
-    <p class="body">
-        Discover the benefits of data analytics and make better decisions regarding revenue, customer
-        experience, and overall efficiency.
-    </p>
+                <p class="statHeading gridColumnHeader1">10k+</p>
+                <p class="body gridBody1">COMPANIES</p>
+                <p class="statHeading gridColumnHeader2">314</p>
+                <p class="body gridBody2">TEMPLATES</p>
+                <p class="statHeading gridColumnHeader3">12m+</p>
+                <p class="body gridBody3">QUERIES</p>
 
-    <p class="statHeading">10k+</p>
-    <p class="body">companies</p>
-    <p class="statHeading">314</p>
-    <p class="body">templates</p>
-    <p class="statHeading">12m+</p>
-    <p class="body">queries</p>
-
-    <p class="body">version 1.8</p>
-
+            </div>
+            <div style="background: linear-gradient(to right,var(--color_imageOverlay), var(--color_imageOverlay)), url(./images/image-header-desktop.jpg); border-top-right-radius:var(--borderradius_card); border-bottom-right-radius:var(--borderradius_card);">
+            </div>
+        </div>
+    </div>
     <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
         Coded by <a href="#">John Kim</a>.
     </div>
+
 </body>
 </html>
