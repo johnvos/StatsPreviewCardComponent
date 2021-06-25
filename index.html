@@ -20,24 +20,44 @@
           --fontsize_textBody: 15px;
       }
 
+      @font-face {
+          font-family: Inter;
+          src: url(https://fonts.google.com/specimen/Inter);
+          font-weight: 400;
+      }
+
+      @font-face {
+          font-family: InterBold;
+          src: url(https://fonts.google.com/specimen/Inter);
+          font-weight: 700;
+      }
+
+      @font-face {
+          font-family: LexendDeca;
+          src: url(https://fonts.google.com/specimen/Lexend+Deca);
+          font-weight: 400;
+      }
+
       p.header, span.headerHighlight{
           font-size:32px;
           color:var(--color_textWhite);
+          font-family:Inter;
       }
 
       span.headerHighlight {
           color: var(--color_textAccent);
+          font-family:InterBold;
       }
 
       p.body{
           font-size:15px;
           color:var(--color_textParagraph);
+          font-family:LexendDeca;
       }
 
       p.statHeading{
           color:var(--color_textHeading);
       }
-      
 
       .attribution { font-size: 11px; text-align: center; }
       .attribution a { color: hsl(228, 45%, 44%); }
