@@ -20,24 +20,48 @@
           --fontsize_textBody: 15px;
       }
 
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+      p.header span.headerHighlight{
+          font-size:32px;
+          color:var(--color_textWhite);
+      }
+
+      span.headerHighlight {
+          color: var(--color_textAccent);
+      }
+
+      p.body{
+          font-size:15px;
+          color:var(--color_textParagraph);
+      }
+
+      p.statHeading{
+          color:var(--color_textHeading);
+      }
+      
+
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body style="background-color:var(--color_pageBackground)">
 
-  Get insights that help your business grow.
+    <p class="header">Get <span class="headerHighlight">insights</span> that help your business grow.</p>
 
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
+    <p class="body">
+        Discover the benefits of data analytics and make better decisions regarding revenue, customer
+        experience, and overall efficiency.
+    </p>
 
-  10k+ companies
-  314 templates
-  12m+ queries
+    <p class="statHeading">10k+</p>
+    <p class="body">companies</p>
+    <p class="statHeading">314</p>
+    <p class="body">templates</p>
+    <p class="statHeading">12m+</p>
+    <p class="body">queries</p>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">John Kim</a>.
+    </div>
 </body>
 </html>
