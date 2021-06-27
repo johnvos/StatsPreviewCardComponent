@@ -20,6 +20,8 @@
           --color_textHeading: #ffffff99;
           --fontsize_textBody: 15px;
           --borderradius_card: 10px;
+          --float_gridContentWidth: 540px;
+          --float_gridContentHeight: 446px;
       }
 
       @font-face {
@@ -49,7 +51,7 @@
           color:var(--color_textParagraph);
           font-family:LexendDeca;
           font-weight:400;
-          margin-top:-50px;
+          margin-top:-15px;
       }
 
       p.statHeading {
@@ -63,10 +65,23 @@
           display: grid;
           width: 1080px;
           height: 446px;
-          grid-template-columns: 540px 540px;
+          grid-template-areas: 'content image';
           background-color: var(--color_cardBackground);
           border-radius: var(--borderradius_card);
       }
+
+      @media only screen and (max-width:1000px) {
+          div.main-grid-container {
+              grid-template-areas: 
+                  'content'
+                  'image';
+              width: var(--float_gridContentWidth);
+              height: calc(2*var(--float_gridContentHeight));
+          }
+      }
+
+      .gridContent {grid-area: content;}
+      .gridImage {grid-area:image;}
 
       div.content-grid-container{
           display: grid;
@@ -75,6 +90,9 @@
               'body body body'
               'columnheader1 columnheader2 columnheader3'
               'body1 body2 body3';
+      }
+
+      div.content-grid-padding {
           padding-top:20px;
           padding-bottom:20px;
           padding-right:60px;
@@ -90,6 +108,11 @@
       .gridBody2 {grid-area:body2;}
       .gridBody3 {grid-area:body3;}
 
+      div.gridElement{
+          width:var(--float_gridContentWidth);
+          height:var(--float_gridContentHeight);
+      }
+
       div.centering{
           display:flex;
           justify-content:center;
@@ -103,23 +126,25 @@
 <body style="background-color:var(--color_pageBackground)">
     <div class="centering" style="height:95vh">
         <div class="main-grid-container">
-            <div class="content-grid-container">
-                <p class="header gridHeader">Get <span class="headerHighlight">insights</span> that help your business grow.</p>
+            <div class="gridElement">
+                <div class="content-grid-container content-grid-padding">
+                    <p class="header gridHeader">Get <span class="headerHighlight">insights</span> that help your business grow.</p>
 
-                <p class="body gridBody">
-                    Discover the benefits of data analytics and make better decisions regarding revenue, customer
-                    experience, and overall efficiency.
-                </p>
+                    <p class="body gridBody">
+                        Discover the benefits of data analytics and make better decisions regarding revenue, customer
+                        experience, and overall efficiency.
+                    </p>
 
-                <p class="statHeading gridColumnHeader1">10k+</p>
-                <p class="body gridBody1">COMPANIES</p>
-                <p class="statHeading gridColumnHeader2">314</p>
-                <p class="body gridBody2">TEMPLATES</p>
-                <p class="statHeading gridColumnHeader3">12m+</p>
-                <p class="body gridBody3">QUERIES</p>
+                    <p class="statHeading gridColumnHeader1">10k+</p>
+                    <p class="body gridBody1">COMPANIES</p>
+                    <p class="statHeading gridColumnHeader2">314</p>
+                    <p class="body gridBody2">TEMPLATES</p>
+                    <p class="statHeading gridColumnHeader3">12m+</p>
+                    <p class="body gridBody3">QUERIES</p>
 
+                </div>
             </div>
-            <div style="background: linear-gradient(to right,var(--color_imageOverlay), var(--color_imageOverlay)), url(./images/image-header-desktop.jpg); border-top-right-radius:var(--borderradius_card); border-bottom-right-radius:var(--borderradius_card);">
+            <div class="gridElement" style="background: linear-gradient(to right,var(--color_imageOverlay), var(--color_imageOverlay)), url(./images/image-header-desktop.jpg); border-top-right-radius:var(--borderradius_card); border-bottom-right-radius:var(--borderradius_card);">
             </div>
         </div>
     </div>
